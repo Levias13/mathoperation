@@ -2,9 +2,6 @@ name: qa
 
 on:
   pull_request:
-    branches: 
-      - 'feature/**'
-      - 'feature/substraction'
 
 jobs:
   build:
