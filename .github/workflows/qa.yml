@@ -3,15 +3,14 @@ name: qa
 on: pull_request
   # Trigger the workflow on pull request,
   # but only for the feature branches
-runs-on: ubuntu-latest
-
-branches:
-  - 'feature/**'
 
 jobs:
   build:
-   steps:
-    - run: "mvn clean install"
+    runs-on: ubuntu-latest
+    branches:
+  - 'feature/**'
+    steps:
+    - run: mvn clean install
 #code-coverage:
   #steps: "diff-cover target/jacoco-ut/jacoco.xml"
 #peer-review:
