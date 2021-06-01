@@ -3,6 +3,8 @@ name: qa
 on: pull_request
   # Trigger the workflow on pull request,
   # but only for the feature branches
+runs-on: ubuntu-latest
+
 branches:
   - 'feature/**'
 
