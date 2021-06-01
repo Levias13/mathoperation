@@ -1,14 +1,15 @@
 name: qa
-
-on: pull_request
+on: 
+  pull_request:
+    branches:
+      only:
+      - 'feature/**'
   # Trigger the workflow on pull request,
   # but only for the feature branches
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    branches:
-  - 'feature/**'
     steps:
     - run: mvn clean install
 #code-coverage:
