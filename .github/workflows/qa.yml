@@ -1,0 +1,17 @@
+name: qa
+
+on:
+  # Trigger the workflow on pull request,
+  # but only for the feature branches
+  pull_request:
+    branches:
+      - 'feature/**'
+
+    jobs:
+      build:
+        steps:
+          - run: "mvn clean install"
+      #code-coverage:
+        #steps: "diff-cover target/jacoco-ut/jacoco.xml"
+      #peer-review:
+        #steps:

@@ -18,4 +18,15 @@ public class ArithmeticOperationsTest {
 		
 	}
 
+	/*@Test
+	public void testSub()
+	{
+
+		ArithmeticOperations operations = new ArithmeticOperations();
+		Integer actual = operations.sub(10, 6);
+		Integer expected = 4;
+		assertEquals(expected, actual);
+
+	}*/
+
 }
