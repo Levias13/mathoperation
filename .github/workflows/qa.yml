@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: pwd
+    - run: ls
+    - run: cd ..
+    - run: ls
     - run: mvn clean install test
     
 #code-coverage:
