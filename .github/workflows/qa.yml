@@ -23,6 +23,7 @@ jobs:
       with:
         name: report.xml
         path: ${{ github.workspace }}/target/jacoco-ut/jacoco.xml
+        run: ls
     
   code-coverage:
    needs: build
