@@ -12,10 +12,9 @@ jobs:
     name: merge
 
     runs-on: ubuntu-latest
-
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: merge
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         uses: ridedott/merge-me-action@v2
         with:
           # Depending on branch prodtection rules, a  manually populated
