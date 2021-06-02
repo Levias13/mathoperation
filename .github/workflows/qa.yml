@@ -17,13 +17,3 @@ jobs:
     - run: mvn clean install test
   #code-coverage:
   #steps: "diff-cover target/jacoco-ut/jacoco.xml"
-  #peer-review:
-  #steps:
-  merge:
-    name: merge
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: "pascalgn/automerge-action@v0.14.2"
-      env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
