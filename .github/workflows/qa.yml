@@ -22,7 +22,7 @@ jobs:
       uses: 'actions/upload-artifact@v2'
       with:
         name: report.xml
-        path: ${{ github.workspace }}/reports/jacoco-ut/jacoco.xml
+        path: ${{ github.workspace }}/target/jacoco-ut/jacoco.xml
     
   code-coverage:
    needs: build
@@ -33,7 +33,7 @@ jobs:
       id: jacoco
       uses: madrapps/jacoco-report@v1.1
       with:
-        path: ${{ github.workspace }}/reports/jacoco-ut/jacoco.xml
+        path: ${{ github.workspace }}/target/jacoco-ut/jacoco.xml
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 0
         min-coverage-changed-files: 60
