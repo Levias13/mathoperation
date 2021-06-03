@@ -23,19 +23,24 @@ jobs:
       with:
         name: report.xml
         path: ${{ github.workspace }}/target/jacoco-ut/jacoco.xml
-        
-    - run: ls
     
   code-coverage:
    needs: build
    name: Code coverage
    runs-on: ubuntu-latest
    steps:
+    - name: download report
+      uses: actions/download-artifact@v2
+      with:
+       name: report.xml
+   
+    - run: ls
+          
     - name: Jacoco Report to PR
       id: jacoco
       uses: madrapps/jacoco-report@v1.1
       with:
-        path: ${{ github.workspace }}/target/jacoco-ut/jacoco.xml
+        path: ${{ github.workspace }}/report.xml
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 0
         min-coverage-changed-files: 60
