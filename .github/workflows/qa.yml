@@ -45,5 +45,14 @@ jobs:
         min-coverage-overall: 0
         min-coverage-changed-files: 60
  
-    - name: Get the Coverage info
-      run: echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}"
+    - name: Analize coverage info
+      with:
+       script: |
+        if( ${{ steps.jacoco.outputs.coverage-changed-files }} < 60){
+          return 1;
+        }else{
+          return 0;
+        }
+          
+        
+       
