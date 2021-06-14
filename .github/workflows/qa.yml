@@ -23,6 +23,12 @@ jobs:
       with:
         name: report.xml
         path: ${{ github.workspace }}/target/jacoco-ut/jacoco.xml
+        
+    - name: Upload script
+      uses: 'actions/upload-artifact@v2'
+      with:
+        name: coverge.sh
+        path: ${{ github.workspace }}/.github/workflows/scripts/coverage.sh
     
   code-coverage:
    needs: build
@@ -34,7 +40,10 @@ jobs:
       with:
        name: report.xml
    
-    - run: ls
+    - name: download script
+      uses: actions/download-artifact@v2
+      with:
+       name: coverge.sh
           
     - name: Jacoco Report to PR
       id: jacoco
@@ -48,6 +57,6 @@ jobs:
     - name: Analize coverage info
       shell: bash
       run: |
-       chmod +x ${{ github.workspace }}/.github/workflows/scripts/coverage.sh
+       chmod +x ${{ github.workspace }}/coverage.sh
        min-coverage=60
        ./coverage.sh "${min-coverage}" "${{ steps.jacoco.outputs.coverage-changed-files }}"
