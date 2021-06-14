@@ -48,6 +48,6 @@ jobs:
     - name: Analize coverage info
       shell: bash
       run: |
-       chmod +x ${{ github.workspace }}/.github/scripts/coverage.sh
+       chmod +x ${{ github.workspace }}/.github/workflows/scripts/coverage.sh
        min-coverage=60
        ./coverage.sh "${min-coverage}" "${{ steps.jacoco.outputs.coverage-changed-files }}"
