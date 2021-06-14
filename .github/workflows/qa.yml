@@ -46,6 +46,7 @@ jobs:
         min-coverage-changed-files: 60
  
     - name: Analize coverage info
+      uses: ./
       with:
        script: |
         if( ${{ steps.jacoco.outputs.coverage-changed-files }} < 60){
