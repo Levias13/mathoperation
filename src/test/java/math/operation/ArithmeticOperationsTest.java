@@ -18,7 +18,7 @@ public class ArithmeticOperationsTest {
 		
 	}
 
-	/*@Test
+	@Test
 	public void testSub()
 	{
 
@@ -27,6 +27,6 @@ public class ArithmeticOperationsTest {
 		Integer expected = 4;
 		assertEquals(expected, actual);
 
-	}*/
+	}
 
 }
