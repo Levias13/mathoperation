@@ -46,14 +46,8 @@ jobs:
         min-coverage-changed-files: 60
  
     - name: Analize coverage info
-      uses: ./
-      with:
-       script: |
-        if( ${{ steps.jacoco.outputs.coverage-changed-files }} < 60){
-          return 1;
-        }else{
-          return 0;
-        }
-          
-        
-       
+      shell: bash
+      run: |
+       chmod +x ${{ github.workspace }}/.github/scripts/coverage.sh
+       min-coverage=60
+       ./coverage.sh "${min-coverage}" "${{ steps.jacoco.outputs.coverage-changed-files }}"
