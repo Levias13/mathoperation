@@ -58,5 +58,5 @@ jobs:
       shell: bash
       run: |
        chmod +x ${{ github.workspace }}/coverage.sh
-       min-coverage=60
-       ./coverage.sh "${min-coverage}" "${{ steps.jacoco.outputs.coverage-changed-files }}"
+       mincoverage=60
+       ${{ github.workspace }}/coverage.sh "${mincoverage}" "${{ steps.jacoco.outputs.coverage-changed-files }}"
