@@ -20,7 +20,7 @@ jobs:
     
     - name: diff-cover
       id: diff
-      uses: Levias13/mathoperation@v1
+      uses: Levias13/diff-cover-action@v1
       with:
        path: ${{ github.workspace }}/target/jacoco-ut/jacoco.xml
     - name: ver output
