@@ -16,7 +16,9 @@ jobs:
         java-version: '8'
         
     - name: build and test
-      run: mvn clean install test
+      run: |
+       git remote show origin
+       mvn clean install test
     
     - name: Upload report
       uses: 'actions/upload-artifact@v2'

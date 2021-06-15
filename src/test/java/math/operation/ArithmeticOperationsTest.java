@@ -18,7 +18,7 @@ public class ArithmeticOperationsTest {
 		
 	}
 
-	/*@Test
+	@Test
 	public void testSub()
 	{
 
@@ -27,6 +27,16 @@ public class ArithmeticOperationsTest {
 		Integer expected = 4;
 		assertEquals(expected, actual);
 
-	}*/
+	}
+	
+	@Test
+	public void testMul()
+	{
 
+		ArithmeticOperations operations = new ArithmeticOperations();
+		Integer actual = operations.mul(10, 6);
+		Integer expected = 60;
+		assertEquals(expected, actual);
+
+	}
 }
