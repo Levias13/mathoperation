@@ -18,45 +18,10 @@ jobs:
     - name: build and test
       run: mvn clean install test
     
-    - name: Upload report
-      uses: 'actions/upload-artifact@v2'
+    - name: diff-cover
+      id: diff
+      uses: Levias13/mathoperation@V1
       with:
-        name: report.xml
-        path: ${{ github.workspace }}/target/jacoco-ut/jacoco.xml
-        
-    - name: Upload script
-      uses: 'actions/upload-artifact@v2'
-      with:
-        name: coverge.sh
-        path: ${{ github.workspace }}/.github/workflows/scripts/coverage.sh
-    
-  code-coverage:
-   needs: build
-   name: Code coverage
-   runs-on: ubuntu-latest
-   steps:
-    - name: download report
-      uses: actions/download-artifact@v2
-      with:
-       name: report.xml
-   
-    - name: download script
-      uses: actions/download-artifact@v2
-      with:
-       name: coverge.sh
-          
-    - name: Jacoco Report to PR
-      id: jacoco
-      uses: madrapps/jacoco-report@v1.1
-      with:
-        path: ${{ github.workspace }}/jacoco.xml
-        token: ${{ secrets.GITHUB_TOKEN }}
-        min-coverage-overall: 0
-        min-coverage-changed-files: 60
- 
-    - name: Analize coverage info
-      shell: bash
-      run: |
-       chmod +x ${{ github.workspace }}/coverage.sh
-       mincoverage=60
-       ${{ github.workspace }}/coverage.sh "${mincoverage}" "${{ steps.jacoco.outputs.coverage-changed-files }}"
+       path: ${{ github.workspace }}/target/jacoco-ut/jacoco.xml
+    - name: ver output
+      run: echo "el resultado fue ${{ steps.diff.outputs.exit-code }}"
