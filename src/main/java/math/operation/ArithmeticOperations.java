@@ -7,12 +7,12 @@ public class ArithmeticOperations {
 		return a+b;
 	}
 
-	/*public Integer sub(Integer a, Integer b)
+	public Integer sub(Integer a, Integer b)
 	{
 		return a-b;
 	}
 
-	public Integer mul(Integer a, Integer b)
+	/*public Integer mul(Integer a, Integer b)
 	{
 		Integer result = a * b;
 		return result;
