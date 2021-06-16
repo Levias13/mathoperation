@@ -30,8 +30,10 @@ jobs:
        python-version: 3.9
        
     - name: Install dependencies
-      run: |
-          python -m pip install --upgrade pip
+      run: python -m pip install --upgrade pip
           
-    - name: Test python version
-      run: python -v
+    - name: Install diff cover
+      run: pip install diff_cover
+      
+    - name: test diff-cover
+      run: diff-cover test
