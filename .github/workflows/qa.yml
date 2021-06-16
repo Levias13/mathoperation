@@ -36,4 +36,4 @@ jobs:
       run: pip install diff_cover
       
     - name: test diff-cover
-      run: diff-cover ${{ github.workspace }}/target/jacoco-ut/jacoco.xml --fail-under=80
+      run: diff-cover ${{ github.workspace }}/target/jacoco-ut/jacoco.xml --compare-branch=origin/develop --fail-under=80
