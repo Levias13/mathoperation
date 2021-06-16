@@ -34,4 +34,4 @@ jobs:
       run: pip install diff_cover
       
     - name: Min coverage achieve?
-      run: diff-cover ${{ github.workspace }}/target/jacoco-ut/jacoco.xml --compare-branch=origin/develop --fail-under=60 --exclude */Utils/*
+      run: diff-cover ${{ github.workspace }}/target/jacoco-ut/jacoco.xml --compare-branch=origin/develop --fail-under=60 --exclude */utils/*
