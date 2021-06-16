@@ -11,7 +11,8 @@ jobs:
     - name: java setup
       uses: actions/checkout@v2
       with:
-       fetch-depth: 0
+       fetch-depth: 2
+    - run: git checkout HEAD^
     - uses: actions/setup-java@v2
       with:
         distribution: 'adopt'
