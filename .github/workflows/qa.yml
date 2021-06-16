@@ -10,9 +10,7 @@ jobs:
     steps:
     - name: java setup
       uses: actions/checkout@v2
-      with:
-       fetch-depth: 0
-    - run: git checkout ${GITHUB_HEAD_REF}
+    - run: git fetch origin develop:refs/remotes/origin/develop
     - uses: actions/setup-java@v2
       with:
         distribution: 'adopt'
