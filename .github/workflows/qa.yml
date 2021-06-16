@@ -24,10 +24,14 @@ jobs:
        cd jacoco-ut
        ls
     
-    - name: diff-cover
-      id: diff
-      uses: Levias13/diff-cover-action@v1.0.1
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
       with:
-       path: ${{ github.workspace }}/target/jacoco-ut/jacoco.xml
-    - name: ver output
-      run: echo "el resultado fue ${{ steps.diff.outputs.exit-code }}"
+       python-version: 3.9
+       
+    - name: Install dependencies
+      run: |
+          python -m pip install --upgrade pip
+          
+    - name: Test python version
+      run: python -v
