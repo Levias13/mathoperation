@@ -7,7 +7,7 @@ public class ArithmeticOperations {
 		return a+b;
 	}
 
-	/*public Integer sub(Integer a, Integer b)
+	public Integer sub(Integer a, Integer b)
 	{
 		return a-b;
 	}
@@ -18,7 +18,7 @@ public class ArithmeticOperations {
 		return result;
 	}
 
-	public Integer div(Integer a, Integer b)
+	/*public Integer div(Integer a, Integer b)
 	{
 		return a/b;
 	}*/
