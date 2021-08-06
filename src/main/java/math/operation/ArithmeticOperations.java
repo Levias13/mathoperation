@@ -11,4 +11,15 @@ public class ArithmeticOperations {
 	{
 		return a-b;
 	}
+	
+        public Integer mul(Integer a, Integer b)
+	{
+		Integer result = a * b;
+		return result;
+	}
+
+	public Integer div(Integer a, Integer b)
+	{
+		return a/b;
+	}
 }
